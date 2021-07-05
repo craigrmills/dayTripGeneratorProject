@@ -64,21 +64,18 @@ function solveIssue(happy) {
         switch (issue) {
             case "1":
                 destination = getRandom(destinations);
-                showTrip();
                 break;
             case "2":
                 restaurant = getRandom(restaurants);
-                showTrip();
                 break;
             case "3":
                 transportation = getRandom(transportations);
-                showTrip();
                 break;
             case "4":
                 entertainment = getRandom(entertainments);
-                showTrip();
                 break;
         }
+        showTrip();
         userHappy = prompt("Are you satisfied with your trip? yes or no");
         userHappy = validateHappy(userHappy);
         if (userHappy == "no") {
