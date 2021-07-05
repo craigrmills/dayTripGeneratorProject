@@ -38,7 +38,7 @@ function validateHappy(happy) {
 }
 
 function validateIssue(theIssue) {
-    while (theIssue != 1 && theIssue != 2 && theIssue != 3 && theIssue != 4) {
+    while (theIssue < 1 || theIssue > 4) {
         theIssue = prompt("What are you unhappy with? 1 for Destination, 2 for Restaurant, 3 for Transportation, 4 for Entertainment");
     }
     return theIssue;
@@ -59,8 +59,8 @@ function isSatisfied() {
 
 function solveIssue(happy) {
     let issue = prompt("What are you unhappy with? 1 for Destination, 2 for Restaurant, 3 for Transportation, 4 for Entertainment");
+    issue = validateIssue(issue);
     while (userHappy == "no") {
-        issue = validateIssue(issue);
         switch (issue) {
             case "1":
                 destination = getRandom(destinations);
@@ -83,6 +83,7 @@ function solveIssue(happy) {
         userHappy = validateHappy(userHappy);
         if (userHappy == "no") {
             issue = prompt("What are you unhappy with? 1 for Destination, 2 for Restaurant, 3 for Transportation, 4 for Entertainment");
+            issue = validateIssue(issue);
         }
     }
 }
